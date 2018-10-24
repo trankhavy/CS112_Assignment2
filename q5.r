@@ -25,7 +25,7 @@ Treatment[which(treat==1)] = "Treatment group"
 Treatment[which(treat==0)] = "Control group"
 df = data.frame(pred_prob,Treatment)
 interleave_hist = ggplot(df,aes(x=pred_prob,fill=Treatment,color=Treatment)) + 
-  geom_histogram(alpha=0.5) + 
+  geom_histogram(alpha=0.5, position="identity") + 
   xlab("Estimated probability")+ 
   ylab("Frequency") +
   ggtitle("Distribution of the estimated probabilities for both treatment and control group") +
